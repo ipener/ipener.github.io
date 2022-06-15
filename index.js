@@ -35,6 +35,31 @@ const preloadImages = () => {
 _cnvs.width = 3072;
 _cnvs.height = 1920;
 
+function setCanvas() {
+  if (window.innerWidth < window.innerHeight) {
+    _cnvs.style.transform = "translate(-50%, -50%) rotate(-90deg)";
+
+    if (window.innerHeight / window.innerWidth > 1.6) {
+      _cnvs.style.width = "100vh";
+      _cnvs.style.height = "calc(100vh / 1.6)";
+    } else {
+      _cnvs.style.height = "100vw";
+      _cnvs.style.width = "calc(100vw * 1.6)";
+    }
+  } else {
+    _cnvs.style.transform = "translate(-50%, -50%)";
+    if (window.innerWidth / window.innerHeight > 1.6) {
+      _cnvs.style.width = "100vw";
+      _cnvs.style.height = "calc(100vw / 1.6)";
+    } else {
+      _cnvs.style.height = "100vh";
+      _cnvs.style.width = "calc(100vh * 1.6)";
+    }
+  }
+}
+setCanvas();
+window.onresize = setCanvas;
+
 const bg = new Image();
 bg.src = 'anim/zoom/0000.jpg';
 bg.onload = function() { context.drawImage(bg, 0, 0); }
@@ -43,20 +68,26 @@ const img = new Image();
 const updateImage0 = index => {
   if (index == lastFrame0) return;
   lastFrame0 = index;
-  img.src = currentFrame0(index);
-  context.drawImage(img, _cnvs.width - img.width, (_cnvs.height - img.height) / 2);
+  requestAnimationFrame(() => {
+    img.src = currentFrame0(index);
+    context.drawImage(img, _cnvs.width - img.width, (_cnvs.height - img.height) / 2);
+  });
 }
 const updateImage1 = index => {
   if (index == lastFrame1) return;
   lastFrame1 = index;
-  bg.src = currentFrame1(index);
-  context.drawImage(bg, 0, 0);
+  requestAnimationFrame(() => {
+    bg.src = currentFrame1(index);
+    context.drawImage(bg, 0, 0);
+  });
 }
 const updateImage2 = index => {
   if (index == lastFrame2) return;
   lastFrame2 = index;
-  img.src = currentFrame2(index);
-  context.drawImage(img, _cnvs.width - img.width, (_cnvs.height - img.height) / 2);
+  requestAnimationFrame(() => {
+    img.src = currentFrame2(index);
+    context.drawImage(img, _cnvs.width - img.width, (_cnvs.height - img.height) / 2);
+  });
 }
 
 window.addEventListener('scroll', () => {
@@ -81,17 +112,11 @@ window.addEventListener('scroll', () => {
 
   if (scrollTop < 1.5 * window.innerHeight) {
     const i = clamp(Math.ceil(scrollTop / (1.5 * window.innerHeight) * frameCount0) + 1, 0, frameCount0);
-    //if (frameIndex < frameCount0 - 1) {
-        //requestAnimationFrame(() => updateImage0(frameIndex));
-    //}
     updateImage0(i);
   } else if (scrollTop < 3.5 * window.innerHeight) {
     updateImage0(frameCount0);
   } else if (scrollTop < 4.5 * window.innerHeight) {
     const i = clamp(Math.ceil(map(scrollTop, 3.5 * window.innerHeight, 4.5 * window.innerHeight, frameCount0, 0)) - 1, 0, frameCount0);
-    //if (frameIndex > 0 && frameIndex < frameCount0 - 1) {
-        //requestAnimationFrame(() => updateImage0(frameIndex));
-    //}
     updateImage0(i);
   } else {
     updateImage0(0);

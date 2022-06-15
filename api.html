@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;900&display=swap"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100..400,1,0"/>
     <link rel="stylesheet" href="u.css"/>
-    <link rel="stylesheet" media="screen and (min-width: 960px)" href="l.css"/>
-    <link rel="stylesheet" media="screen and (min-width: 481px) and (max-width: 959px)" href="m.css"/>
-    <link rel="stylesheet" media="screen and (max-width: 480px)" href="s.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 1600px)" href="l.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 1200px) and (max-width: 1599px)" href="m.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 640px) and (max-width: 1199px)" href="s.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 639px)" href="xs.css"/>
     <title>Heating with compute</title>
   </head>
   <body>
@@ -22,10 +23,10 @@
         <div><a href="./api.html">Compute</a></div>
         <div><a onclick="showMission()">Mission</a></div>
       </header>
-      <div style="z-index: 10; margin: 0 12.5rem;">
+      <div class="ictr">
         <div style="position: relative; height: 100vh;">
           <div id="_hdr" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-            <h1 class="httl" style="font-size: 12rem;"><span style="font-weight: 200;">Furoa/</span>API</h1>
+            <h1 class="httl api"><span style="font-weight: 200;">Furoa/</span>API</h1>
             <p class="hsbttl">The decentralized computing platform for AI training, CGI, HPE and Ethereum staking—at half the cost of existing services</p>
           </div>
           <div id="_sth">
@@ -35,39 +36,41 @@
         <div style="height: 100vh; width: 100%;"></div>
         <div>
           <div>
-            <div class="itm" style="width: calc(100vw - 25rem); display: flex; flex-direction: row; justify-content: space-between; gap: 6rem;">
-              <div style="flex: 1 1 0; min-width: calc(50vw - 12.5rem);">
+            <div class="itml">
+              <div style="flex: 1 1 0; font-size: .75em;">
                 <h2>AI, CGI, HPC, PoS—you name it.</h2>
                 <p>Furoa is optimized for training neural nets like GPT-3, performing intense simulations like Finite Element Analysis, rendering complex CGI (Hi Tim), processing vast amounts of audio/video data, or running ASIC-resistant cryptocurrency mining and staking software.</p>
               </div>
               <div style="flex: 1 2 0;">
-                <img src="a2.png" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="a2.png" style="width: 100%; height: 100%; object-fit: contain;">
               </div>
             </div>
             <div style="height: 100vh; width: 100%;"></div>
           </div>
           <div>
-            <div class="itm" style="width: calc(100vw - 25rem); display: flex; flex-direction: row; justify-content: space-between; gap: 6rem;">
-              <div style="flex: 1 1 0; min-width: calc(50vw - 12.5rem);">
+            <div class="itml">
+              <div style="flex: 1 1 0; font-size: .75em;">
                 <h2>The highest specced compute modules</h2>
                 <p>are equipped with an 8-core ARM® v8.2 64-bit CPU, a 1024-core GPU, 32 dedicated Tensor cores and 16 GB of LPDDR5 RAM for a whopping 100 TOPS5—so yes, it can run Crysis. 10 Gb/s internet enables super fast data transfers. The compute modules and tiles are linked with PCIe Gen4 connectors and fibre-optic cables.</p>
               </div>
-              <div style="flex: 1 1 0;"><img src="a1.png" style="width: 100%; height: 100%; object-fit: cover;"></div>
+              <div style="flex: 1 1 0;">
+                <img src="a1.png" style="width: 100%; height: 100%; object-fit: contain;">
+              </div>
             </div>
             <div style="height: 100vh; width: 100%;"></div>
           </div>
           <div>
-            <div class="itm" style="width: calc(100vw - 25rem); transform: translateY(-50%); padding: 4rem 0; display: flex; flex-direction: row; justify-content: space-between; gap: 6rem;">
-              <div style="flex: 1 1 0;">
+            <div class="itml" style="transform: translateY(-50%); padding: 4em 0;">
+              <div style="flex: 1 2 0; font-size: .75em;">
                 <h2>We’ll open-<br>source it</h2>
                 <p>once the software is battle-tested because we deeply believe that a global computing platform should be built by the open source community, not corporations.</p>
               </div>
-              <div class="crd" style="flex: 1 1 0; padding: 4rem 0;">
-                <div style="margin: 0 4rem;">
+              <div class="crd" style="flex: 2 1 0; padding: 4rem 0;">
+                <div style="margin: 0 4em;">
                   <h3 style="color: #ff5851;">Get notified when Furoa API goes into private beta.</h3>
                   <div style="margin: 1rem 0 2rem 0;">We expect to launch a developer beta program towards the end of 2022. The public release depends on the hardware production ramp which we expect to start in 2024. We aim to offer Furoa API at around half the cost of existing comparable compute services and aspire to make it even cheaper in the future.</div>
                 </div>
-                <div style="margin: 0 4rem;">
+                <div style="margin: 0 4em;">
                   <form action="">
                     <div class="fctr">
                       <div>
@@ -120,8 +123,8 @@
           </div>
         </div>
         <footer id="footnotes">
-          <div style="margin: 1rem 0;"><b>We value privacy.</b> Your data will always be transmitted fully encrypted and stored securely. We will never pass it on in unencrypted form to a third party or use it for ads.</div>
-          <div>Copyright © 2022 Furoa Ltd liab. Co. All rights reserved.</div>
+          <div style="margin: 1em 0;"><b>We value privacy.</b> Your data will always be transmitted fully encrypted and stored securely. We will never pass it on in unencrypted form to a third party or use it for ads.</div>
+          <div>Copyright © 2022 Furoa Ltd liab. Co (former techOS Ltd liab. Co). All rights reserved.</div>
         </footer>
         <div id="_mctr">
           <div style="position:relative;">
@@ -133,7 +136,7 @@
               <p><b>40%</b> of energy-related CO<sub>2</sub> emissions come from heating spaces.</p>
               <p><b>300 TWh</b> of electricity is used by data centers per year but 40% is wasted on cooling.</p>
               <p><b>17,000,000</b> modern homes could be heated instead.</p>
-              <div class="cta" style="margin-top: 2rem;">
+              <div class="cta">
                 <span class="material-symbols-outlined">notifications</span><span>Learn more</span>
               </div>
             </div>

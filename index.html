@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100..400,1,0" />
     <link rel="stylesheet" href="u.css"/>
-    <link rel="stylesheet" media="screen and (min-width: 960px)" href="l.css"/>
-    <link rel="stylesheet" media="screen and (min-width: 481px) and (max-width: 959px)" href="m.css"/>
-    <link rel="stylesheet" media="screen and (max-width: 480px)" href="s.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 1600px)" href="l.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 1200px) and (max-width: 1599px)" href="m.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 640px) and (max-width: 1199px)" href="s.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 639px)" href="xs.css"/>
     <title>Heating with compute</title>
   </head>
   <body>
@@ -24,12 +25,12 @@
         <div><a href="./api.html">Compute</a></div>
         <div><a onclick="showMission()">Mission</a></div>
       </header>
-      <div style="z-index: 10; margin: 0 12.5rem;">
+      <div class="ictr">
         <div style="position: relative; height: 100vh;">
           <div id="_hdr" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
             <h1 class="httl">Furoa</h1>
-            <p class="hsbttl">The high-tech floor heating spaces with computing power for free<sup><a href="#footnotes">1</a></sup> and providing backup energy 24/7</p>
-            <div class="cta" style="margin-top: 2rem;" onclick="showMission()">
+            <p class="hsbttl">The high-tech floor heating spaces with compute power for free<sup><a href="#footnotes">1</a></sup> and providing backup energy 24/7</p>
+            <div class="cta" style="margin-top: 2em;" onclick="showMission()">
               <span class="material-symbols-outlined">notifications</span><span>Learn about our mission</span>
             </div>
           </div>
@@ -43,7 +44,7 @@
             <div class="itm">
               <h2>Yes, it’s a supercomputer</h2>
               <p>disguised as a beautiful floor that performs useful computations and simultaneously heats your home. And because it's a computer, it automatically adjusts the temperature—down to every 50cm and almost instantly.</p>
-              <div class="cta" style="margin-top: 2rem;" onclick="window.location.href = './api.html';">
+              <div class="cta" style="margin-top: 2em;" onclick="window.location.href = './api.html';">
                 <span class="material-symbols-outlined">notifications</span><span>Learn about our API</span>
               </div>
             </div>
@@ -66,7 +67,7 @@
           <div>
             <div class="itm">
               <h2>The specs</h2>
-              <ul style="list-style: none; font-size: 1.5rem; margin-top: 1rem;">
+              <ul style="list-style: none; font-size: 1.5em; margin-top: 1em;">
                 <li><em>Width × Depth × Height:</em> 1000 × 1000 × 15mm</li>
                 <li><em>Weight:</em> 9.9kg</li>
                 <li><em>Power consumption (sleep mode):</em> ~1W</li>
@@ -85,11 +86,11 @@
           </div>
           <div>
             <div class="itm crd">
-              <div style="margin: 0 4rem;">
+              <div style="margin: 0 4em;">
                 <h3 style="color: #ff5851;">Get notified when Furoa is available in your region.</h3>
-                <div style="margin: 1rem 0 2rem 0;">Production is expected to start in 2024 with Switzerland and northern Europe as our first markets. We aim to make Furoa cheaper than what you’d pay for a conventional high-end floor plus five years of heating expenses. And while Furoa will always heat your home for free, your upfront investment will be fully offset by the energy savings in five to ten years depending on your region.</div>
+                <div style="margin: 1em 0 2em 0;">Production is expected to start in 2024 with Switzerland and northern Europe as our first markets. We aim to make Furoa cheaper than what you’d pay for a conventional high-end floor plus five years of heating expenses. And while Furoa will always heat your home for free, your upfront investment will be fully offset by the energy savings in five to ten years depending on your region.</div>
               </div>
-              <div style="margin: 0 4rem;">
+              <div style="margin: 0 4em;">
                 <form>
                   <div class="fctr">
                     <div>
@@ -169,9 +170,9 @@
         <footer id="footnotes">
           <div style="position: relative;">
             <ol>
-              <li>Heating is free as long as it’s in line with our <b>fair use policy</b>. In short, as long as your use is in line with the average amount of energy spent on heating in your region, heating will be free.</li><li>The backup power feature does not yet support high-voltage or heavy duty appliances, machines or electric vehicels. The exact amount of backup power varies by region and your home’s electricity use.</li><li>The limit for scaling our system to large alreas depends on the property's power supplies and internet connection.</li><li>The mentioned TFLOPS refers to the half-float (FP16) performance of the system which is used industry-wide when comparing AI compute capabilities.</li>
+              <li>Heating is free as long as it’s in line with our <b>fair use policy</b>. In short, as long as your use is in line with the average amount of energy spent on heating in your region, heating will be free.</li><li>The backup power feature does not yet support high-voltage or heavy duty appliances, machines or electric vehicels. The exact amount of backup power varies by region and your home’s electricity use.</li><li>The limit for scaling our system to large areas depends on the property's power supplies and internet connection.</li><li>The mentioned TFLOPS refers to the half-float (FP16) performance of the system which is used industry-wide when comparing AI compute capabilities.</li>
             </ol>
-            <div style="margin: 1rem 0;"><b>We value privacy.</b> Your data will always be transmitted fully encrypted and stored securely. We will never pass it on in unencrypted form to a third party or use it for ads.</div>
+            <div style="margin: 1em 0;"><b>We value privacy.</b> Your data will always be transmitted fully encrypted and stored securely. We will never pass it on in unencrypted form to a third party or use it for ads.</div>
             <div>Copyright © 2022 Furoa Ltd liab. Co (former techOS Ltd liab. Co). All rights reserved.</div>
           </div>
         </footer>
@@ -185,12 +186,12 @@
               <p><b>40%</b> of energy-related CO<sub>2</sub> emissions come from heating spaces.</p>
               <p><b>300 TWh</b> of electricity is used by data centers per year but 40% is wasted on cooling.</p>
               <p><b>17,000,000</b> modern homes could be heated instead.</p>
-              <div class="cta" style="margin-top: 2rem;">
+              <div class="cta" style="margin-top: 2em;">
                 <span class="material-symbols-outlined">notifications</span><span>Learn more</span>
               </div>
             </div>
             <div>
-              <div><b>Our mission</b> is to<br>reduce emissions by<br>building data centers<br>that heat homes.</div>
+              <div><b>Our mission</b> is to reduce emissions by building data centers that heat homes.</div>
             </div>
           </div>
         </div>

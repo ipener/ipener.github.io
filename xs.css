@@ -1,5 +1,5 @@
 body {
-  font-size: 10px;
+  font-size: 8px;
 }
 header {
   padding-top: 1em;
@@ -9,29 +9,29 @@ header>div {
   margin-right: 1em;
 }
 h1 {
-  font-size: 16em;
+  font-size: 8em;
 }
 .ictr {
-  margin: 0 4em;
+  margin: 0 2em;
 }
 @media (orientation: landscape) {
   footer,.itm {
-    width: calc(50vw - 4em);
+    width: calc(50vw - 2em);
   }
 }
 @media (orientation: portrait) {
   footer,.itm {
-    width: calc(100vw - 8em);
+    width: calc(100vw - 4em);
   }
 }
 #_mctr,.itml {
-  width: calc(100vw - 8em);
+  width: calc(100vw - 4em);
 }
 .cta>span:last-child {
   font-size: 1.5em;
 }
 .api {
-  font-size: 8em;
+  font-size: 6em;
 }
 #_mctr>div:last-child, .itml {
   flex-direction: column;

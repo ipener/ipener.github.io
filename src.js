@@ -5,7 +5,7 @@ function showMission() {
   _mctr.style.transform = 'translate(-50%, -50%)';
 }
 function hideMission() {
-  _mctr.style.transform = 'translate(-50%, 100%)';
+  _mctr.style.transform = 'translate(-50%, 140%)';
 }
 
 function sbmtf() {
@@ -57,7 +57,6 @@ function sbmtc() {
     console.log('Please fill out all fields.');
   }
 }
-
 
 function sendHttps(body) {
   fetch('https://europe-west6-furoa-co.cloudfunctions.net/send', {

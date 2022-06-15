@@ -1,0 +1,37 @@
+body {
+  font-size: 16px;
+}
+header {
+  padding-top: 2em;
+}
+header>div {
+  margin-right: 2em;
+}
+h1 {
+  font-size: 16em;
+}
+.ictr {
+  margin: 0 8em;
+}
+@media (orientation: landscape) {
+  footer,.itm {
+    width: calc(50vw - 8em);
+  }
+}
+@media (orientation: portrait) {
+  footer,.itm {
+    width: calc(100vw - 16em);
+  }
+}
+#_mctr,.itml {
+  width: calc(100vw - 16em);
+}
+.cta>span:last-child {
+  font-size: 1em;
+}
+.api {
+  font-size: 12em;
+}
+#_mctr>div:last-child, .itml {
+  flex-direction: row;
+}
