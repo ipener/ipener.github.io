@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="description" content="Heating with compute">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100..400,1,0" />
+    <link rel="stylesheet" href="u.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 960px)" href="l.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 481px) and (max-width: 959px)" href="m.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 480px)" href="s.css"/>
+    <title>Heating with compute</title>
+  </head>
+  <body>
+    <div class="octr">
+      <div style="z-index: -1;">
+        <canvas id="_cnvs"></canvas>
+        <div id="_fd"></div>
+      </div>
+      <header>
+        <div><a href="./index.html">Floor</a></div>
+        <div><a href="./api.html">Compute</a></div>
+        <div><a onclick="showMission()">Mission</a></div>
+      </header>
+      <div style="z-index: 10; margin: 0 12.5rem;">
+        <div style="position: relative; height: 100vh;">
+          <div id="_hdr" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+            <h1 class="httl">Furoa</h1>
+            <p class="hsbttl">The high-tech floor heating spaces with computing power for free<sup><a href="#footnotes">1</a></sup> and providing backup energy 24/7</p>
+            <div class="cta" style="margin-top: 2rem;" onclick="showMission()">
+              <span class="material-symbols-outlined">notifications</span><span>Learn about our mission</span>
+            </div>
+          </div>
+          <div id="_sth">
+            <span class="material-symbols-outlined">south</span>
+          </div>
+        </div>
+        <div style="height: 100vh; width: 100%;"></div>
+        <div>
+          <div>
+            <div class="itm">
+              <h2>Yes, it’s a supercomputer</h2>
+              <p>disguised as a beautiful floor that performs useful computations and simultaneously heats your home. And because it's a computer, it automatically adjusts the temperature—down to every 50cm and almost instantly.</p>
+              <div class="cta" style="margin-top: 2rem;" onclick="window.location.href = './api.html';">
+                <span class="material-symbols-outlined">notifications</span><span>Learn about our API</span>
+              </div>
+            </div>
+            <div class="fllr"></div>
+          </div>
+          <div>
+            <div class="itm">
+              <h2>It heats during a power outage</h2>
+              <p>and provides backup energy thanks to integrated batteries<sup><a href="#footnotes">2</a></sup>—ideal to use alongside solar panels. The precisely engineered tiles are durable, waterproof and easily carry any furniture or even cars.</p>
+            </div>
+            <div class="fllr"></div>
+          </div>
+          <div>
+            <div class="itm">
+              <h2>And it scales to virtually any size</h2>
+              <p>since it's composed of modular, easily replaceable tiles<sup><a href="#footnotes">3</a></sup>. Apartment, house or office—Furoa’s slick light or deep gray ceramic surface will fit any interior.</p>
+            </div>
+            <div class="fllr"></div>
+          </div>
+          <div>
+            <div class="itm">
+              <h2>The specs</h2>
+              <ul style="list-style: none; font-size: 1.5rem; margin-top: 1rem;">
+                <li><em>Width × Depth × Height:</em> 1000 × 1000 × 15mm</li>
+                <li><em>Weight:</em> 9.9kg</li>
+                <li><em>Power consumption (sleep mode):</em> ~1W</li>
+                <li><em>Peak power consumption:</em> 60–100W</li>
+                <li><em>Battery capacity:</em> 200Wh</li>
+                <li><em>Surface temperature:</em> Up to 35° C</li>
+                <li><em>Operating temperature:</em> -25° C to -65° C</li>
+                <li><em>Relative humidity:</em> 5% to 85%</li>
+                <li><em>Line voltage:</em> 100–125V AC at 12A; 220–240V AC at 6A</li>
+                <li><em>Frequency:</em> 50Hz to 60Hz, single phase</li>
+                <li><em>Maximum load:</em> TBD</li>
+                <li><em>Maximum altitude:</em> TBD</li>
+              </ul>
+            </div>
+            <div class="fllr"></div>
+          </div>
+          <div>
+            <div class="itm crd">
+              <div style="margin: 0 4rem;">
+                <h3 style="color: #ff5851;">Get notified when Furoa is available in your region.</h3>
+                <div style="margin: 1rem 0 2rem 0;">Production is expected to start in 2024 with Switzerland and northern Europe as our first markets. We aim to make Furoa cheaper than what you’d pay for a conventional high-end floor plus five years of heating expenses. And while Furoa will always heat your home for free, your upfront investment will be fully offset by the energy savings in five to ten years depending on your region.</div>
+              </div>
+              <div style="margin: 0 4rem;">
+                <form>
+                  <div class="fctr">
+                    <div>
+                      <label for="_name">Name</label>
+                      <input id="_name" type="text" name="Name" maxlength="64"/>
+                    </div>
+                    <div>
+                      <label for="_email">Email</label>
+                      <input id="_email" type="email" name="Email" maxlength="64"/>
+                    </div>
+                  </div>
+                  <div class="fctr">
+                    <div>
+                      <label for="_region">Region</label>
+                      <div class="sctr">
+                        <select id="_region" name="Region">
+                          <option value="CH">Switzerland</option>
+                          <option value="EU">Europe</option>
+                          <option value="NA">North America</option>
+                        </select>
+                        <span class="material-symbols-outlined">expand_more</span>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="_finish">Preferred finish</label>
+                      <div class="sctr">
+                        <select id="_finish" name="Preferred finish">
+                          <option value="dark">Deep gray</option>
+                          <option value="light">Light gray</option>
+                        </select>
+                        <span class="material-symbols-outlined">expand_more</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fctr">
+                      <div>
+                        <label for="_property">Property type</label>
+                        <div class="sctr">
+                          <select id="_property" name="Property type">
+                            <option value="office">Office</option>
+                            <option value="house">House</option>
+                            <option value="apartment">Apartment</option>
+                          </select>
+                          <span class="material-symbols-outlined">expand_more</span>
+                        </div>
+                      </div>
+                      <div>
+                        <label for="_area">Floor area (m<sup style="font-weight: 700;">2</sup>)</label>
+                        <div class="sctr">
+                          <select id="_area" name="Floor area">
+                            <option value="40-59">40–59</option>
+                            <option value="60-79">60–79</option>
+                            <option value="80-99">80–99</option>
+                            <option value="100-119">100–119</option>
+                            <option value="120-139">120–139</option>
+                            <option value="140-159">140–159</option>
+                            <option value="160-179">160–179</option>
+                            <option value="180-199">180–199</option>
+                            <option value="200+">200+</option>
+                          </select>
+                          <span class="material-symbols-outlined">expand_more</span>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="cctr">
+                    <div>By submitting this form you agree to our <a href="#footnotes"><b>Privacy Policy</b></a>.</div>
+                    <div class="cta" onclick="sbmtf()">
+                      <span class="material-symbols-outlined">notifications</span><span>Sign up for notifications</span>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="fllr"></div>
+          </div>
+        </div>
+        <footer id="footnotes">
+          <div style="position: relative;">
+            <ol>
+              <li>Heating is free as long as it’s in line with our <b>fair use policy</b>. In short, as long as your use is in line with the average amount of energy spent on heating in your region, heating will be free.</li><li>The backup power feature does not yet support high-voltage or heavy duty appliances, machines or electric vehicels. The exact amount of backup power varies by region and your home’s electricity use.</li><li>The limit for scaling our system to large alreas depends on the property's power supplies and internet connection.</li><li>The mentioned TFLOPS refers to the half-float (FP16) performance of the system which is used industry-wide when comparing AI compute capabilities.</li>
+            </ol>
+            <div style="margin: 1rem 0;"><b>We value privacy.</b> Your data will always be transmitted fully encrypted and stored securely. We will never pass it on in unencrypted form to a third party or use it for ads.</div>
+            <div>Copyright © 2022 Furoa Ltd liab. Co (former techOS Ltd liab. Co). All rights reserved.</div>
+          </div>
+        </footer>
+        <div id="_mctr">
+          <div style="position:relative;">
+            <span class="material-symbols-outlined" onclick="hideMission()">cancel</span>
+          </div>
+          <div>
+            <div>
+              <h2>The Problem</h2>
+              <p><b>40%</b> of energy-related CO<sub>2</sub> emissions come from heating spaces.</p>
+              <p><b>300 TWh</b> of electricity is used by data centers per year but 40% is wasted on cooling.</p>
+              <p><b>17,000,000</b> modern homes could be heated instead.</p>
+              <div class="cta" style="margin-top: 2rem;">
+                <span class="material-symbols-outlined">notifications</span><span>Learn more</span>
+              </div>
+            </div>
+            <div>
+              <div><b>Our mission</b> is to<br>reduce emissions by<br>building data centers<br>that heat homes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
