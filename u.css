@@ -166,7 +166,7 @@ p {
   text-decoration: none !important;
   padding: 9px 16px;
   border: 1px solid #FF5851;
-  border-radius: 20px;
+  border-radius: 2em;
   line-height: 1em;
   color: #FF5851;
   flex-grow: 1;
@@ -186,7 +186,7 @@ p {
 .cta>span:last-child {
   margin-left: .5em;
 }
-canvas {
+video {
   position: fixed;
   top: 50%;
   left: 50%;

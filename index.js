@@ -1,95 +1,47 @@
 const html = document.documentElement;
-const context = _cnvs.getContext("2d");
 
-const frameCount0 = 60;
-const frameCount1 = 30;
-const frameCount2 = 120;
-let lastFrame0 = -1;
-let lastFrame1 = -1;
-let lastFrame2 = -1;
-const currentFrame0 = index => (
-  `anim/flip/${index.toString().padStart(4, '0')}.jpg`
-)
-const currentFrame1 = index => (
-  `anim/zoom/${index.toString().padStart(4, '0')}.jpg`
-)
-const currentFrame2 = index => (
-  `anim/detail/${index.toString().padStart(4, '0')}.jpg`
-)
-
-const preloadImages = () => {
-  for (let i = 0; i < frameCount0; i++) {
-    const img = new Image();
-    img.src = currentFrame0(i);
-  }
-  for (let i = 1; i < frameCount1; i++) {
-    const img = new Image();
-    img.src = currentFrame1(i);
-  }
-  for (let i = 0; i < frameCount2; i++) {
-    const img = new Image();
-    img.src = currentFrame2(i);
-  }
-};
-
-_cnvs.width = 3072;
-_cnvs.height = 1920;
+_v.width = 3072;
+_v.height = 1920;
 
 function setCanvas() {
   if (window.innerWidth < window.innerHeight) {
-    _cnvs.style.transform = "translate(-50%, -50%) rotate(-90deg)";
+    _v.style.transform = "translate(-50%, -50%) rotate(-90deg)";
 
     if (window.innerHeight / window.innerWidth > 1.6) {
-      _cnvs.style.width = "100vh";
-      _cnvs.style.height = "calc(100vh / 1.6)";
+      _v.style.width = "100vh";
+      _v.style.height = "calc(100vh / 1.6)";
     } else {
-      _cnvs.style.height = "100vw";
-      _cnvs.style.width = "calc(100vw * 1.6)";
+      _v.style.height = "100vw";
+      _v.style.width = "calc(100vw * 1.6)";
     }
   } else {
-    _cnvs.style.transform = "translate(-50%, -50%)";
+    _v.style.transform = "translate(-50%, -50%)";
+
     if (window.innerWidth / window.innerHeight > 1.6) {
-      _cnvs.style.width = "100vw";
-      _cnvs.style.height = "calc(100vw / 1.6)";
+      _v.style.width = "100vw";
+      _v.style.height = "calc(100vw / 1.6)";
     } else {
-      _cnvs.style.height = "100vh";
-      _cnvs.style.width = "calc(100vh * 1.6)";
+      _v.style.height = "100vh";
+      _v.style.width = "calc(100vh * 1.6)";
     }
   }
 }
 setCanvas();
+
+const scrollV = () => {
+  if (_v.duration) {
+    const dt = window.scrollY + html.getBoundingClientRect().top;
+    const t = (window.scrollY - dt) / (html.scrollHeight - window.innerHeight);
+
+    _v.currentTime = _v.duration * Math.min(Math.max(t, 0), 1);
+  }
+  requestAnimationFrame(scrollV);
+}
+_v.addEventListener('loadeddata', function() {
+  requestAnimationFrame(scrollV);
+}, false);
+
 window.onresize = setCanvas;
-
-const bg = new Image();
-bg.src = 'anim/zoom/0000.jpg';
-bg.onload = function() { context.drawImage(bg, 0, 0); }
-
-const img = new Image();
-const updateImage0 = index => {
-  if (index == lastFrame0) return;
-  lastFrame0 = index;
-  requestAnimationFrame(() => {
-    img.src = currentFrame0(index);
-    context.drawImage(img, _cnvs.width - img.width, (_cnvs.height - img.height) / 2);
-  });
-}
-const updateImage1 = index => {
-  if (index == lastFrame1) return;
-  lastFrame1 = index;
-  requestAnimationFrame(() => {
-    bg.src = currentFrame1(index);
-    context.drawImage(bg, 0, 0);
-  });
-}
-const updateImage2 = index => {
-  if (index == lastFrame2) return;
-  lastFrame2 = index;
-  requestAnimationFrame(() => {
-    img.src = currentFrame2(index);
-    context.drawImage(img, _cnvs.width - img.width, (_cnvs.height - img.height) / 2);
-  });
-}
-
 window.addEventListener('scroll', () => {
   const scrollTop = html.scrollTop;
   const maxScrollTop = html.scrollHeight - window.innerHeight;
@@ -103,39 +55,7 @@ window.addEventListener('scroll', () => {
     _sth.style.opacity = 0;
   }
 
-  if (scrollTop > 5.5 * window.innerHeight) {
-    const i = clamp(Math.ceil(map(scrollTop, 5.5 * window.innerHeight, 6.5 * window.innerHeight, 0, frameCount1)) + 1, 0, frameCount1);
-    updateImage1(i);
-  } else {
-    updateImage1(0);
-  }
-
-  if (scrollTop < 1.5 * window.innerHeight) {
-    const i = clamp(Math.ceil(scrollTop / (1.5 * window.innerHeight) * frameCount0) + 1, 0, frameCount0);
-    updateImage0(i);
-  } else if (scrollTop < 3.5 * window.innerHeight) {
-    updateImage0(frameCount0);
-  } else if (scrollTop < 4.5 * window.innerHeight) {
-    const i = clamp(Math.ceil(map(scrollTop, 3.5 * window.innerHeight, 4.5 * window.innerHeight, frameCount0, 0)) - 1, 0, frameCount0);
-    updateImage0(i);
-  } else {
-    updateImage0(0);
-  }
-
-  if (scrollTop > 7 * window.innerHeight) {
-    const i = clamp(Math.ceil(map(scrollTop, 7 * window.innerHeight, 9 * window.innerHeight, 0, frameCount2)) + 1, 0, frameCount2);
-    updateImage2(i);
-  } else if (scrollTop > 9 * window.innerHeight) {
-    updateImage2(frameCount2);
-  } else {
-    updateImage2(0);
-  }
-
   if (scrollTop > 4.5 * window.innerHeight && scrollTop < 6 * window.innerHeight) {
     _fd.classList.add('anim');
-  } else {
-    //_fd.classList.remove('anim');
   }
 });
-
-preloadImages();
