@@ -28,18 +28,7 @@ function setCanvas() {
 }
 setCanvas();
 
-const scrollV = () => {
-  if (_v.duration) {
-    const dt = window.scrollY + html.getBoundingClientRect().top;
-    const t = (window.scrollY - dt) / (html.scrollHeight - window.innerHeight);
-
-    _v.currentTime = _v.duration * Math.min(Math.max(t, 0), 1);
-  }
-  requestAnimationFrame(scrollV);
-}
-_v.addEventListener('loadeddata', function() {
-  requestAnimationFrame(scrollV);
-}, false);
+_v.pause();
 
 window.onresize = setCanvas;
 window.addEventListener('scroll', () => {
@@ -58,4 +47,13 @@ window.addEventListener('scroll', () => {
   if (scrollTop > 4.5 * window.innerHeight && scrollTop < 6 * window.innerHeight) {
     _fd.classList.add('anim');
   }
+
+  _v.pause();
+
+  setInterval(function(){
+    const dt = window.scrollY + html.getBoundingClientRect().top;
+    const t = (window.scrollY - dt) / (html.scrollHeight - window.innerHeight);
+
+    _v.currentTime = _v.duration * Math.min(Math.max(t, 0), 1);
+  }, 40);
 });

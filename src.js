@@ -58,6 +58,29 @@ function sbmtc() {
   }
 }
 
+function sbmtj() {
+  const n = _name.value;
+  const e = _email.value;
+  const u = _url.value;
+  const t = _text.value;
+
+  if (n && e && u && t) {
+    const body = {
+      path: 'join-us',
+      data: {
+        name: n,
+        email: e,
+        url: u,
+        text: t
+      }
+    };
+
+    sendHttps(body);
+  } else {
+    console.log('Please fill out all fields.');
+  }
+}
+
 function sendHttps(body) {
   fetch('https://europe-west6-furoa-co.cloudfunctions.net/send', {
     method: "POST",

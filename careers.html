@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="description" content="Heating with compute">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;900&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100..400,1,0"/>
+    <link rel="stylesheet" href="u.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 1600px)" href="l.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 1200px) and (max-width: 1599px)" href="m.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 640px) and (max-width: 1199px)" href="s.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 639px)" href="xs.css"/>
+    <title>Heating with compute</title>
+  </head>
+  <body>
+    <div class="octr">
+      <header>
+        <div><a href="./index.html">Floor</a></div>
+        <div><a href="./api.html">Compute</a></div>
+        <div><a onclick="showMission()">Mission</a></div>
+        <div><a href="./careers.html">Join us</a></div>
+      </header>
+      <div class="ictr">
+        <div style="height: 100vh; position: relative;">
+          <div class="crd" style="position: absolute; top: 50%; transform: translateY(-50%); padding: 4rem 0;">
+            <div style="margin: 0 4em;">
+              <h3 style="color: #ff5851;">Join us.</h3>
+              <div style="margin: 1rem 0 2rem 0;">We're an early-stage startup based in Zurich, Switzerland, and are always looking for exceptional hardware and software engineers to help us on our mission. It doesn’t matter whether you’re a self-tought engineer or have multiple PhDs. We value skills, experiences and passion more than anything else.
+                Please fill out this form and we‘ll let you know if we think you‘re a good fit.</div>
+            </div>
+            <div style="margin: 0 4em;">
+              <form action="">
+                <div class="fctr">
+                  <div>
+                    <label for="_name">Name</label>
+                    <input id="_name" type="text" name="Name" maxlength="64"/>
+                  </div>
+                  <div>
+                    <label for="_email">Email</label>
+                    <input id="_email" type="email" name="Email" maxlength="64"/>
+                  </div>
+                </div>
+                <div class="fctr">
+                  <div>
+                    <label for="_url">Link to your resume</label>
+                    <input id="_url" type="url" name="Link to your resume" maxlength="256"/>
+                  </div>
+                </div>
+                <div class="fctr">
+                  <div>
+                    <label for="_text">What exceptional work have you done in software or hardware engineering?</label>
+                    <textarea id="_text" placeholder="800 characters max" maxlength="800"></textarea>
+                  </div>
+                </div>
+                <div class="cctr">
+                  <div>By submitting this form you agree to our <a href="#footnotes"><b>Privacy Policy</b></a>.</div>
+                  <div class="cta" onclick="sbmtj()">
+                    <span class="material-symbols-outlined">badge</span><span>Apply</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <footer id="footnotes">
+          <div style="margin: 1em 0;"><b>We value privacy.</b> Your data will always be transmitted fully encrypted and stored securely. We will never pass it on in unencrypted form to a third party or use it for ads.</div>
+          <div>Copyright © 2022 Furoa Ltd liab. Co (former techOS Ltd liab. Co). All rights reserved.</div>
+        </footer>
+        <div id="_mctr">
+          <div style="position:relative;">
+            <span class="material-symbols-outlined" onclick="hideMission()">cancel</span>
+          </div>
+          <div>
+            <div>
+              <h2>The Problem</h2>
+              <p><b>40%</b> of energy-related CO<sub>2</sub> emissions come from heating spaces.</p>
+              <p><b>300 TWh</b> of electricity is used by data centers per year but 40% is wasted on cooling.</p>
+              <p><b>17,000,000</b> modern homes could be heated instead.</p>
+              <div class="cta">
+                <span class="material-symbols-outlined">notifications</span><span>Learn more</span>
+              </div>
+            </div>
+            <div>
+              <div><b>Our mission</b> is to<br>reduce emissions by<br>building data centers<br>that heat homes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="src.js"></script>
+</html>
+
